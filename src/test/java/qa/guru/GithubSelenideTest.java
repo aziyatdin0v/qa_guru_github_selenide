@@ -13,8 +13,7 @@ public class GithubSelenideTest extends BaseTest {
                 .searchSelenideRepo()
                 .openWikiPage()
                 .openWikiPage()
-                .existSoftAssertionsInPage()
                 .clickToSoftAssertions()
-                .shouldJUnitCodeInPage();
+                .shouldHaveJUnitCode();
     }
 }

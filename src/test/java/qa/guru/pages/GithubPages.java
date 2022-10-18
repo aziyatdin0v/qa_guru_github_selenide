@@ -14,7 +14,6 @@ public class GithubPages {
     private final SelenideElement
             searchInput = $(".header-search-input"),
             wikiTab = $(linkText("Wikis")),
-            textSoftAssertions = $(withText("SoftAssertions")),
             linkSoftAssertions = $(linkText("SoftAssertions")),
             searchJUnitCode = $(withText("com.codeborne.selenide.junit5.SoftAssertsExtension"));
 
@@ -35,18 +34,13 @@ public class GithubPages {
         return this;
     }
 
-    public GithubPages existSoftAssertionsInPage() {
-        textSoftAssertions.should(Condition.exist);
-        return this;
-    }
-
     public GithubPages clickToSoftAssertions() {
         linkSoftAssertions.click();
         return this;
     }
 
-    public GithubPages shouldJUnitCodeInPage() {
-        searchJUnitCode.should(Condition.exist);
+    public GithubPages shouldHaveJUnitCode() {
+        searchJUnitCode.shouldHave(Condition.exist);
         return this;
     }
 }
